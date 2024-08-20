@@ -1,7 +1,9 @@
 import { z } from "astro:content"
+import slugify from "slugify"
 
 
 const projectSchema = z.object({
+    id: z.string(),
     name: z.string(),
     description: z.string(),
     type: z.string(),
@@ -36,6 +38,7 @@ const api = {
         return rows.map(row => {
             const [name, description, type, address, province, locality, postalcode, price, year, images, state, total_land, rooms, bathrooms, garages, floors, garden, pool, terrace, elevator, security] = row;
             return projectSchema.parse({
+                id: slugify(name, { lower: true }),
                 name,
                 description,
                 type,
