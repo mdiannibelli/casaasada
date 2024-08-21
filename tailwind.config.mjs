@@ -4,11 +4,17 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'property': "url('/hero.jpg')",
-				'overlay': "linear-gradient(to top, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 58%, rgba(0, 0, 0, 0.4) 100%);"
+				'property': "url('/hero.jpg')"
 			},
 			borderRadius: {
 				'custom-tl': '12px 0 0 0', // Top-left: 12px, others: 0
+			},
+			colors: {
+				'primary': '#CFA468',
+				'secondary': '#AE966D',
+			},
+			fontFamily: {
+				'playfair': ['"Playfair Display Variable", serif']
 			}
 		},
 	},

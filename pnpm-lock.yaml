@@ -20,6 +20,9 @@ importers:
       '@fontsource-variable/noto-sans-kr':
         specifier: ^5.0.6
         version: 5.0.6
+      '@fontsource-variable/playfair-display':
+        specifier: ^5.0.26
+        version: 5.0.26
       astro:
         specifier: ^4.14.2
         version: 4.14.2(rollup@4.20.0)(typescript@5.5.4)
@@ -345,6 +348,9 @@ packages:
 
   '@fontsource-variable/noto-sans-kr@5.0.6':
     resolution: {integrity: sha512-BaSaI2Bxv0YQupgDYolxMWv8abe/XyxuWkyO0dtwY/yzDWHeToy2qK2vPqp347TTDdUlnj/Qs3NsPTfJwEZbiw==}
+
+  '@fontsource-variable/playfair-display@5.0.26':
+    resolution: {integrity: sha512-RupbW2PqBbsLbwcRBIX9fzzWr9jcovB+szNZGMRxU8V+l2VsaVhv9rm0NN/Z0gi15NtR+ipvB8apAeJJoBT1oQ==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2487,6 +2493,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/noto-sans-kr@5.0.6': {}
+
+  '@fontsource-variable/playfair-display@5.0.26': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

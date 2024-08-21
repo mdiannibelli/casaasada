@@ -1,0 +1,61 @@
+---
+import { heroPhotos } from "../constants/herophotos";
+---
+
+<section class="h-[85vh] flex flex-col bg-black">
+    <div class="w-full  bg-property bg-cover bg-center h-full relative opacity-40"></div>
+    <div class="grid grid-cols-2 mx-52 absolute left-0 right-0 h-[85vh] justify-center">
+        <div>
+            <!-- rest -->
+        </div>
+        <div class="flex flex-col gap-6">
+            <div class="h-full flex flex-col justify-center mt-12">
+                <h2 class="text-5xl text-white font-medium leading-[3.6rem]">Contamos con un catálogo amplio de propiedades</h2>
+                <a href="/properties" class="text-white font-regular text-md border-[1.5px] max-w-fit mt-12 border-white rounded px-6 py-2 hover:bg-white hover:text-gray-700 duration-300">Ver propiedades</a>
+            </div>
+
+            <div class="flex gap-x-8 mb-16">
+                {
+                    heroPhotos.map((photo) => (
+                        <figure >
+                            <img src={photo.url} alt={photo.title} class="w-full h-full object-cover bg-center">
+                        </figure>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    figure {
+        overflow: hidden; /* Asegura que la imagen no se salga de su contenedor */
+        display: inline-block;
+    }
+
+    figure img {
+        transition: transform 0.4s ease-in-out;
+        transform: scale(1); /* Escala inicial */
+    }
+
+    figure img:hover {
+        transform: scale(1.2); /* Escala al pasar el cursor */
+    }
+    
+    figure img:active {
+        transform: scale(1.15); /* Leve encogimiento al hacer clic, opcional */
+    }
+
+    figure img:hover ~ img {
+        transform: scale(1); /* Mantener el tamaño original en imágenes hermanas */
+    }
+
+    figure img:active ~ img {
+        transform: scale(1.1); /* Encogimiento progresivo en imágenes hermanas */
+    }
+
+    figure img:out {
+        transform: scale(0.9); /* Encogimiento progresivo al salir el cursor */
+    }
+</style>

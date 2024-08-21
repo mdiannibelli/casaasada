@@ -1,33 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../sections/Header.astro';
+import Hero from '../sections/Hero.astro';
 ---
 
 <Layout title="Casaasada | Propiedades">
-	<header class="fixed left-0 top-0 right-0 z-1000 bg-transparent">
-		<div class="flex justify-around items-center lg:px-20 mx-12 pt-8">
-			<div>
-				<h1>
-					<a href="/" class="text-white text-4xl font-semibold uppercase">Casaasada</a>
-				</h1>
-				<span class="text-white uppercase font-light">Las mejores propiedades de Argentina</span>
-			</div>
-			<nav class="flex gap-x-44">
-				<ul class="flex justify-center gap-x-12">
-					<li><a href="/properties" class="text-white uppercase font-regular">Propiedades</a></li>
-					<li><a href="/about-us" class="text-white uppercase font-regular">Sobre Nosotros</a></li>
-					<li><a href="/location" class="text-white uppercase font-regular">Ubicación</a></li>
-				</ul>
-				<div>
-					<a href="/contacto" class="text-white uppercase font-semibold bg-[#21B139] border-1 rounded-custom-tl px-4 py-2">Contacto</a>
-				</div>
-			</nav>
-		</div>
-	</header>
+	<Header/>
 
 	<main>
 		<!-- hero -->
-		<section class="h-[85vh] bg-property bg-no-repeat flex flex-col bg-cover bg-center">
-			<div class="w-full h-full bg-overlay "></div>
-		</section>
+		<Hero/>
 	</main>
 </Layout>
