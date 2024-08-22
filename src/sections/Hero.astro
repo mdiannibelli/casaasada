@@ -1,24 +1,36 @@
 ---
 import { heroPhotos } from "../constants/herophotos";
+import Facebook from "../icons/Facebook.astro";
+import Instagram from "../icons/Instagram.astro";
+import Whatsapp from "../icons/Whatsapp.astro";
+import X from "../icons/X.astro";
 ---
 
 <section class="h-[85vh] flex flex-col bg-black">
     <div class="w-full  bg-property bg-cover bg-center h-full relative opacity-40"></div>
-    <div class="grid grid-cols-2 mx-52 absolute left-0 right-0 h-[85vh] justify-center">
-        <div>
-            <!-- rest -->
+    <div class="grid grid-cols-1 md:grid-cols-2 mx-8 xl:mx-52 absolute left-0 right-0 h-[85vh] justify-center">
+        <div class="flex flex-col h-full justify-center lg:justify-end mr-6 lg:mr-0 lg:pb-24 order-2 md:order-1">
+            <div class="flex gap-x-6 md:gap-x-12">
+                <a href="#"><Whatsapp className="text-primary hover:text-secondary duration-300  size-8"/></a>
+                <a href="#"><Instagram className="text-primary  hover:text-secondary duration-300 size-8"/></a>
+                <a href="#"><Facebook className="text-primary  hover:text-secondary duration-300 size-8"/></a>
+                <a href="#"><X className="text-primary  hover:text-secondary duration-300 size-8"/></a>
+            </div>
+            <aside class="mt-4 max-w-[520px] w-full">
+                <span class="font-light text-white text-[10px] md:text-xs xl:text-sm">Algunas personas buscan una casa nueva, aquí le entregamos un hogar y te acompañamos en este maraviloso viaje de principio a fin, casa nueva vida nueva.</span>
+            </aside>
         </div>
-        <div class="flex flex-col gap-6">
-            <div class="h-full flex flex-col justify-center mt-12">
-                <h2 class="text-5xl text-white font-medium leading-[3.6rem]">Contamos con un catálogo amplio de propiedades</h2>
+        <div class="flex flex-col gap-6 order-1 md:order-2">
+            <div class="h-full flex flex-col justify-center mt-24 md:mt-12">
+                <h2 class="text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-white font-medium leading-[2.5rem] xl:leading-[3.6rem]">Contamos con un catálogo amplio de propiedades</h2>
                 <a href="/properties" class="text-white font-regular text-md border-[1.5px] max-w-fit mt-12 border-white rounded px-6 py-2 hover:bg-white hover:text-gray-700 duration-300">Ver propiedades</a>
             </div>
 
-            <div class="flex gap-x-8 mb-16">
+            <div class="hidden lg:flex gap-x-8 mb-16">
                 {
                     heroPhotos.map((photo) => (
-                        <figure >
-                            <img src={photo.url} alt={photo.title} class="w-full h-full object-cover bg-center">
+                        <figure class="w-full h-full">
+                            <img src={photo.url} alt={photo.title} class="min-w-full min-h-full object-cover bg-center">
                         </figure>
                     ))
                 }
