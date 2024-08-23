@@ -1,0 +1,36 @@
+---
+import { carrousselUrl } from "../constants/imgs";
+---
+
+<section class="max-w-[1120px] mx-auto my-24 px-12">
+    <div class="grid grid-cols-1 gap-y-12 md:grid-cols-2">
+        <div class="flex flex-col gap-2">
+            <h2 class="text-4xl font-playfair font-medium">Encontrá y viví en el hogar que siempre soñaste</h2>
+            <p class="text-sm font-light text-gray-700 mt-2">Explora nuestra selección de propiedades cuidadosamente elegidas para ofrecerte el lugar perfecto donde comenzar nuevas historias. Con ubicaciones privilegiadas y diseños que inspiran, hacemos realidad tus sueños.</p>
+            <p class="text-sm font-light text-gray-700">En cada rincón de Argentina, hay un hogar esperando por ti. Desde modernos apartamentos en la ciudad hasta tranquilas casas en los suburbios, encuentra el espacio ideal que se adapte a tu estilo de vida.</p>
+            <div class="flex gap-x-6 p-8 justify-center md:justify-start">
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-semibold">+8</span>
+                    <span class="text-gray-700 text-[10px]">Años de experiencia</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-semibold">+32</span>
+                    <span class="text-gray-700 text-[10px]">Clientes satisfechos</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-3xl font-semibold">+12</span>
+                    <span class="text-gray-700 text-[10px]">Propiedades disponibles</span>
+                </div>
+            </div>
+            <div class="flex justify-end md:block">
+                <a href="/contacto" class="text-white uppercase font-semibold bg-primary hover:bg-secondary duration-300 border-1 rounded-custom-tl px-4 py-2">Sobre Nosotros</a>
+            </div>
+        </div>
+
+        <div>
+            <figure>
+                <img src={carrousselUrl.url} alt={carrousselUrl.title} class="w-full h-full object-cover">
+            </figure>
+        </div>
+    </div>
+</section>

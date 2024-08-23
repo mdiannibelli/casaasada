@@ -1,10 +1,12 @@
+import { backgroundImage } from './src/constants/imgs';
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
 			backgroundImage: {
-				'property': "url('/hero.jpg')"
+				'property': `url(${backgroundImage.url})`
 			},
 			borderRadius: {
 				'custom-tl': '12px 0 0 0', // Top-left: 12px, others: 0
