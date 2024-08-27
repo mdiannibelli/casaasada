@@ -1,4 +1,4 @@
-import { backgroundImage } from './src/constants/imgs';
+import { backgroundImage, propertiesImage } from './src/constants/imgs';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -6,7 +6,8 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'property': `url(${backgroundImage.url})`
+				'home': `url(${backgroundImage.url})`,
+				'property': `url(${propertiesImage.url})`
 			},
 			borderRadius: {
 				'custom-tl': '12px 0 0 0', // Top-left: 12px, others: 0

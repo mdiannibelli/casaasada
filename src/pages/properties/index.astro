@@ -1,6 +1,8 @@
 ---
 import api from "../../api/api";
+import Propiedad from "../../components/Propiedad.astro";
 import Layout from "../../layouts/Layout.astro";
+import ExploraPropiedades from "../../sections/ExploraPropiedades.astro";
 
 
 
@@ -10,15 +12,15 @@ console.log(properties);
 
 <Layout title="Propiedades">
 	<main>
-		Properties
-		<ul>
-			{
-				properties.map((property) => (
-					<li>
-						<a href={`/properties/${property.id}`}>{property.name}</a>
-					</li>
-				))
-			}
-		</ul>
+		<ExploraPropiedades/>
+		<section>
+			<ul>
+				{
+					properties.map((property) => (
+						<Propiedad property={property}/>
+					))
+				}
+			</ul>
+		</section>
 	</main>
 </Layout>

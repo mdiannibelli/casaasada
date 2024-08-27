@@ -1,0 +1,12 @@
+---
+const { property } = Astro.props;
+const { address, bathrooms, description, elevator, floors, garages, garden, id, images, locality, name, pool, postalcode, price, province, rooms, security, state, terrace, total_land, type, year } = property;
+---
+
+<div class="flex justify-center items-center my-12">
+    <div>
+        <figure class="p-2">
+            <img class="w-[920px] h-[420px] rounded-md border-[2px] border-white object-cover" src={images[0]} alt={description}>
+        </figure>
+    </div>
+</div>
