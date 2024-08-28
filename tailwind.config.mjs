@@ -7,7 +7,8 @@ export default {
 		extend: {
 			backgroundImage: {
 				'home': `url(${backgroundImage.url})`,
-				'property': `url(${propertiesImage.url})`
+				'property': `url(${propertiesImage.url})`,
+				'degradate': 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%)'
 			},
 			borderRadius: {
 				'custom-tl': '12px 0 0 0', // Top-left: 12px, others: 0

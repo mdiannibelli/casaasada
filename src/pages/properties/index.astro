@@ -6,8 +6,9 @@ import ExploraPropiedades from "../../sections/ExploraPropiedades.astro";
 
 
 
-const properties = await api.list()
-console.log(properties);
+let properties = await api.list()
+
+properties = properties.sort((a, b) => Number(b.year) - Number(a.year));
 ---
 
 <Layout title="Propiedades">
@@ -17,7 +18,9 @@ console.log(properties);
 			<ul>
 				{
 					properties.map((property) => (
-						<Propiedad property={property}/>
+						<a  href={`/properties/${property.id}`}>
+							<Propiedad property={property}/>
+						</a>
 					))
 				}
 			</ul>

@@ -18,7 +18,23 @@ const { property } = Astro.props;
 ---
 
 <Layout title={property.name}>
-	<main>
-		{JSON.stringify(property, null, 2)}
-	</main>
+  <main class="flex flex-col justify-center items-center min-h-screen">
+    <section class="h-[50vh] flex flex-col bg-black">
+      <div style={`background-image: url(${property.images[0]});`} class="w-screen bg-cover bg-center h-full relative opacity-40">&nbsp;</div>
+      <div class="flex mx-8 absolute left-0 right-0 h-[50vh] justify-center">
+          <div class="flex flex-col gap-6 order-1 md:order-2">
+              <div class="h-full flex flex-col justify-center mt-24 md:mt-12">
+                  <span class={`text-semibold text-white text-lg ${property.state === 'Disponible' ? "bg-green-500" : 'bg-red-500'} py-1 w-fit px-3 rounded-md`}>{property.state}</span>
+                  <h1 transition:name={`${property.id}-title`} class="text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-white font-medium leading-[2.5rem] xl:leading-[3.6rem]">{property.name}</h1>
+              </div>
+          </div>
+      </div>
+  </section>
+    <div class="flex flex-col gap-4 my-12">
+      <!-- !!TODO MAKE GALLERY -->
+      {property.images.map((image) => (
+        <img class="w-[920px] h-[420px]  rounded-md object-cover" src={image} alt={property.name}/>
+      ))} 
+    </div>
+  </main>
 </Layout>

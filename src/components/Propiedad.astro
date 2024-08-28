@@ -1,12 +1,28 @@
 ---
+import type { PropertyType } from '../types/types';
+
+
+interface Props {
+    property: PropertyType
+}
+
 const { property } = Astro.props;
-const { address, bathrooms, description, elevator, floors, garages, garden, id, images, locality, name, pool, postalcode, price, province, rooms, security, state, terrace, total_land, type, year } = property;
 ---
 
 <div class="flex justify-center items-center my-12">
-    <div>
-        <figure class="p-2">
-            <img class="w-[920px] h-[420px] rounded-md border-[2px] border-white object-cover" src={images[0]} alt={description}>
+    <article class="flex relative ">
+        <figure>
+            <img class="w-[920px] h-[420px]  rounded-md border-[2px] border-white object-cover" src={property.images[0]} alt={property.description}>
+            <div class="absolute inset-0 bg-degradate rounded-md"></div>
         </figure>
-    </div>
+        <aside class="flex absolute bottom-0 left-0 p-12 w-full justify-between items-center">
+            <div>
+                <span class="text-white font-bold text-md rounded-md px-3 bg-secondary">{property.year}</span>
+                <h2 transition:name={`${property.id}-title`} class="text-white font-semibold text-2xl mt-2">{property.name}</h2>
+            </div>
+            <div>
+                <span class={`text-semibold text-white text-lg ${property.state === 'Disponible' ? "bg-green-500" : 'bg-red-500'} py-1 px-3 rounded-md`}>{property.state}</span>
+            </div>
+        </aside>
+    </article>
 </div>
