@@ -1,5 +1,6 @@
 ---
 import api from '../../api/api';
+import Gallery from '../../components/Gallery';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -31,10 +32,7 @@ const { property } = Astro.props;
       </div>
   </section>
     <div class="flex flex-col gap-4 my-12">
-      <!-- !!TODO MAKE GALLERY -->
-      {property.images.map((image) => (
-        <img class="w-[920px] h-[420px]  rounded-md object-cover" src={image} alt={property.name}/>
-      ))} 
+       <Gallery client:visible property={property}/>
     </div>
   </main>
 </Layout>
