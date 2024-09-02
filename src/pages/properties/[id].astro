@@ -3,6 +3,19 @@ import api from '../../api/api';
 import Gallery from '../../components/Gallery';
 import Layout from '../../layouts/Layout.astro';
 
+import Locality from '../../icons/Locality.astro'
+import Year from '../../icons/Year.astro';
+import TotalLand from '../../icons/TotalLand.astro';
+import Rooms from '../../icons/Rooms.astro';
+import Bathrooms from '../../icons/Bathrooms.astro';
+import Garage from '../../icons/Garage.astro';
+import Floors from '../../icons/Floors.astro';
+import Garden from '../../icons/Garden.astro';
+import Pool from '../../icons/Pool.astro';
+import Terrace from '../../icons/Terrace.astro';
+import Elevator from '../../icons/Elevator.astro';
+import Security from '../../icons/Security.astro';
+
 export async function getStaticPaths() {
     const properties = await api.list();
   return properties.map((property) => ({
@@ -16,6 +29,13 @@ export async function getStaticPaths() {
 }
 
 const { property } = Astro.props;
+
+const bgType = property.type === 'Casa' && 'bg-blue-500' ||
+              property.type === 'Apartamento' && 'bg-green-500' ||
+              property.type === 'Dúplex' && 'bg-purple-500' ||
+              property.type === 'Estudio' && 'bg-gray-500' ||
+              property.type === 'Penthouse' && 'bg-red-500' ||
+              property.type === 'Loft' && 'bg-cyan-700'
 ---
 
 <Layout title={property.name}>
@@ -27,12 +47,79 @@ const { property } = Astro.props;
               <div class="h-full flex flex-col justify-center mt-24 md:mt-12">
                   <span class={`text-semibold text-white text-lg ${property.state === 'Disponible' ? "bg-green-500" : 'bg-red-500'} py-1 w-fit px-3 rounded-md`}>{property.state}</span>
                   <h1 transition:name={`${property.id}-title`} class="text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-white font-medium leading-[2.5rem] xl:leading-[3.6rem]">{property.name}</h1>
+                  <div class="flex gap-x-6 w-full justify-center mt-8">
+                    <span class="text-white">Tipo:</span>
+                    <span class={`text-white rounded-md py-[0.5] px-6 ${bgType}`}>{property.type}</span>
+                  </div>
               </div>
           </div>
       </div>
   </section>
-    <div class="flex flex-col gap-4 my-12">
-       <Gallery client:visible property={property}/>
-    </div>
+    <section>
+      <div class="flex flex-col gap-4 my-12">
+        <Gallery client:visible property={property}/>
+     </div>
+     <div class="flex justify-center items-center my-12 gap-12 px-8 md:px-0 md:max-w-[1024px] flex-wrap mx-auto">
+        <div class="flex gap-x-3 items-center">
+          <span><Locality className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.province} - {property.locality}</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><Year className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.year}</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><TotalLand className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.total_land} m2</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><Rooms className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.rooms} {property.rooms === '1' ? 'habitación' : 'habitaciones'}</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><Bathrooms className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.bathrooms} {property.bathrooms === '1' ? 'baño' : 'baños'}</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><Garage className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.garages} {property.garages === '1' ? 'garaje' : 'garajes'}</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><Floors className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.floors} {property.floors === '1' ? 'piso' : 'pisos'}</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><Garden className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.garden === 'Si' ? 'Tiene jardín' : 'No tiene jardín'}</span>
+        </div>
+
+        <div class="flex gap-x-3 items-center">
+          <span><Pool className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.pool === 'Si' ? 'Tiene pileta' : 'No tiene pileta'}</span>
+        </div>
+        
+        <div class="flex gap-x-3 items-center">
+          <span><Terrace className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.terrace === 'Si' ? 'Tiene terraza' : 'No tiene terraza'}</span>
+        </div>
+        
+        <div class="flex gap-x-3 items-center">
+          <span><Elevator className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.elevator === 'Si' ? 'Tiene ascensor' : 'No tiene ascensor'}</span>
+        </div>
+      
+        <div class="flex gap-x-3 items-center">
+          <span><Security className="text-primary size-8"/></span>
+          <span class="bg-primary py-1 px-3 text-white rounded-md">{property.security === 'Si' ? 'Tiene seguridad' : 'No tiene seguridad'}</span>
+        </div>
+     </div>
+    </section>
   </main>
 </Layout>

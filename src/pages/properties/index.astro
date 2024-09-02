@@ -18,9 +18,9 @@ properties = properties.sort((a, b) => Number(b.year) - Number(a.year));
 			<ul>
 				{
 					properties.map((property) => (
-						<a  href={`/properties/${property.id}`}>
+						<article>
 							<Propiedad property={property}/>
-						</a>
+						</article>
 					))
 				}
 			</ul>
