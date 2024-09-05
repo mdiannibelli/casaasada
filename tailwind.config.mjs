@@ -1,4 +1,4 @@
-import { backgroundImage, propertiesImage, sobreNosotrosImage } from './src/constants/imgs';
+import { backgroundImage, propertiesImage, sobreNosotrosImage, ubicacionImg } from './src/constants/imgs';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,7 +9,8 @@ export default {
 				'home': `url(${backgroundImage.url})`,
 				'property': `url(${propertiesImage.url})`,
 				'degradate': 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%)',
-				'nosotros': `url(${sobreNosotrosImage.url})`
+				'nosotros': `url(${sobreNosotrosImage.url})`,
+				'ubicacion': `url(${ubicacionImg.url})`
 			},
 			borderRadius: {
 				'custom-tl': '12px 0 0 0', // Top-left: 12px, others: 0

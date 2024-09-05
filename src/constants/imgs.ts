@@ -18,3 +18,7 @@ export const sobreNosotrosImage = {
 export const formalPerson = {
     url: 'https://res.cloudinary.com/dvvtskcux/image/upload/v1725457647/casaasada/cz3va0jcjzdd0sxms4x9.jpg'
 }
+
+export const ubicacionImg = {
+    url: 'https://res.cloudinary.com/dvvtskcux/image/upload/v1723932350/casaasada/7-1.png'
+}

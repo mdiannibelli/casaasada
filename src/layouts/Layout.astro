@@ -6,6 +6,8 @@ import '@fontsource-variable/playfair-display';
 import Header from '../sections/Header.astro';
 import Footer from '../components/UI/Footer.astro';
 
+import '../styles/global.css';
+
 import { ViewTransitions } from 'astro:transitions';
 import SideMenu from '../components/SideMenu';
 
@@ -49,3 +51,8 @@ const { title } = Astro.props;
 		font-family: 'Noto Sans KR Variable', sans-serif;
 	}
 </style>
+
+<script>
+    import AOS from 'aos';
+    AOS.init();
+</script>

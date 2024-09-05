@@ -9,7 +9,7 @@ import X from "../icons/X.astro";
 <section class="h-[85vh] flex flex-col bg-black">
     <div class="w-full  bg-home bg-cover bg-center h-full relative opacity-40"></div>
     <div class="grid grid-cols-1 md:grid-cols-2 mx-8 xl:mx-52 absolute left-0 right-0 h-[85vh] justify-center">
-        <div class="flex flex-col h-full justify-center lg:justify-end mr-6 lg:mr-0 lg:pb-24 order-2 md:order-1">
+        <div data-aos="fade-up" data-aos-duration="1500" class="flex flex-col h-full justify-center lg:justify-end mr-6 lg:mr-0 lg:pb-24 order-2 md:order-1">
             <div class="flex gap-x-6 md:gap-x-12">
                 <a href="#"><Whatsapp className="text-primary hover:text-[#7F6942] duration-300  size-8"/></a>
                 <a href="#"><Instagram className="text-primary  hover:text-[#7F6942] duration-300 size-8"/></a>
@@ -21,12 +21,12 @@ import X from "../icons/X.astro";
             </aside>
         </div>
         <div class="flex flex-col gap-6 order-1 md:order-2">
-            <div class="h-full flex flex-col justify-center mt-24 md:mt-12">
+            <div data-aos="fade-left" data-aos-duration="1500" class="h-full flex flex-col justify-center mt-24 md:mt-12">
                 <h2 class="text-3xl md:text-4xl lg:text-4xl xl:text-5xl text-white font-medium leading-[2.5rem] xl:leading-[3.6rem]">Contamos con un catálogo amplio de propiedades</h2>
                 <a href="/properties" class="text-white font-regular text-md border-[1.5px] max-w-fit mt-12 border-white rounded px-6 py-2 hover:bg-white hover:text-gray-700 duration-300">Ver propiedades</a>
             </div>
 
-            <div class="hidden lg:flex gap-x-8 mb-16">
+            <div data-aos="fade-up" data-aos-duration="1500" class="hidden lg:flex gap-x-8 mb-16">
                 {
                     heroPhotos.map((photo) => (
                         <figure class="w-full h-full">
@@ -71,3 +71,4 @@ import X from "../icons/X.astro";
         transform: scale(0.9); /* Encogimiento progresivo al salir el cursor */
     }
 </style>
+
