@@ -1,5 +1,5 @@
 ---
-import BurguerMenu from '../icons/BurguerMenu.astro'
+import NavbarButton from '../components/NavbarButton'
 ---
 
 <header id="navmenu"class="fixed left-0 top-0 right-0 z-20 bg-transparent">
@@ -10,9 +10,7 @@ import BurguerMenu from '../icons/BurguerMenu.astro'
             </h1>
             <span class="text-primary text-[10px] md:text-[12px] uppercase font-light">Las mejores propiedades de Argentina</span>
         </div>
-        <div class="flex lg:hidden">
-            <BurguerMenu className="size-12 text-primary"/>
-        </div>
+        <NavbarButton client:idle/>
         <nav class="hidden lg:flex gap-x-12  xl:gap-x-44 items-center">
             <ul class="flex gap-x-12 lg:ml-8 xl:ml-0">
                 <li><a href="/properties" class="text-white hover:opacity-70 font-regular">Propiedades</a></li>

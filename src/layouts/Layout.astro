@@ -7,6 +7,7 @@ import Header from '../sections/Header.astro';
 import Footer from '../components/UI/Footer.astro';
 
 import { ViewTransitions } from 'astro:transitions';
+import SideMenu from '../components/SideMenu';
 
 interface Props {
 	title: string;
@@ -29,6 +30,7 @@ const { title } = Astro.props;
 	<body>
 		<Header/>
 		<slot />
+		<SideMenu client:load/>
 		<Footer/>
 	</body>
 </html>
